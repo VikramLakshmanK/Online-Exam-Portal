@@ -25,7 +25,7 @@ class QuestionBank:
     def add_question(self, question):
         self.questions.append(question)
 
-    # ✅ FIX ADDED
+    
     def random_select(self, n):
         return random.sample(self.questions, min(n, len(self.questions)))
 
@@ -107,7 +107,7 @@ class Result:
         self.total_marks = sum(q.marks for q in attempt.exam.questions)
         self.scored_marks = attempt.score
         
-        # ✅ safety (avoid division by zero)
+    
         self.percentage = (self.scored_marks / self.total_marks) * 100 if self.total_marks > 0 else 0
         
         self.grade = self.calculate_grade()
@@ -145,7 +145,7 @@ qb.add_question(Question(2, "Earth is round?", "TF", ["True", "False"], "True", 
 qb.add_question(Question(3, "Explain gravity", "DESC", None, None, 10, "medium"))
 
 exam = Exam(101, "Math Test", "Math", 30, 20)
-exam.add_questions(qb.random_select(3))  # ✅ now works
+exam.add_questions(qb.random_select(3))  
 exam.publish()
 
 student = Student(1, "Arun", "101A")
