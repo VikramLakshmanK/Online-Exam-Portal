@@ -137,7 +137,6 @@ class Result:
         }
 
 
-# ------------------ TEST ------------------
 
 qb = QuestionBank()
 qb.add_question(Question(1, "2+2?", "MCQ", ["2", "4", "6"], "4", 5, "easy"))
